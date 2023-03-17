@@ -39,6 +39,12 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }       
 
+        // If spacebar is pressed, fire lazerBolt.
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // Create lazerBolt at the blaster transform postition maintaining the objects rotation.
+            Instantiate(lazerBolt, blaster.transform.position, lazerBolt.transform.rotation);
+        }
 
     }
 }
